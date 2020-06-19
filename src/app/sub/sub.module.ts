@@ -12,6 +12,7 @@ import { TestService } from './test.service';
   imports: [RouterModule.forChild([
     { path: 'test1', component: Test1Component },
     { path: 'test2', component: Test2Component },
+    { path: 'test3', component: Test2Component }
   ]),
     CommonModule
   ],
