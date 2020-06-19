@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { EmptyComponent } from './empty/empty.component';
+import { SubModule } from './sub/sub.module';
 
 @NgModule({
   declarations: [
@@ -10,8 +13,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    RouterModule.forRoot([
+			{ path: '', component: EmptyComponent },
+			{ path: 'module', loadChildren: () => SubModule },
+		]),
+    
+     ],
   providers: [],
   bootstrap: [AppComponent]
 })
